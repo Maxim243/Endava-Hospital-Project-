@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Office</title>
+</head>
+<body>
+
+<form
+        th:method="POST" th:action="@{/project}"
+        th:object="${person}">
+    <label for="name">Enter your name: *</label>
+    <br/>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <br/>
+
+
+    <label for="surname">Enter your surname: *</label>
+    <br/>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Name Error</div>
+    <br/>
+    <br/>
+
+
+    <label for="IDNP">Enter your IDNP: *</label>
+    <br/>
+    <input type="text" th:field="*{IDNP}" id="IDNP"/>
+    <div style="color:red" th:if="${#fields.hasErrors('IDNP')}" th:errors="*{IDNP}">Name Error</div>
+    <br/>
+    <br/>
+
+<!--    <label for="birthday">Enter your birthday</label>-->
+<!--    <br/>-->
+<!--    <input type="text" th:field="*{birthday}" id="birthday"/>-->
+<!--    <br/>-->
+
+    <label for="email">Enter your email:</label>
+    <br/>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</div>
+    <br/>
+    <br/>
+
+    <label for="telephone">Enter your telephone number: *</label>
+    <br/>
+    <input type="text" th:field="*{telephone}" id="telephone"/>
+    <div style="color:red" th:if="${#fields.hasErrors('telephone')}" th:errors="*{telephone}">Name Error</div>
+    <br/>
+
+    <hr/>
+    <input type="submit" value="Add new record"/>
+    <br/>
+</form>
+
+</body>
+</html>
